@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="css/ESTILOS.css">
+    <link rel="shortcut icon" href="../img/Diseño sin título (2) (1).png" type="image/x-icon">
+</head>
+
+<body>
+
+    <div class="wrapper__area" id="wrapper_Area">
+
+        <div class="forms__area">
+
+            <form class="login__form" id="loginForm">
+                <!-- titulo -->
+                <h1 class="form__title">RECYCLAPP</h1>
+
+                <div class="input__group">
+                    <label class="field">
+            <input type="text" name="Usuario" placeholder="Usuario" id="loginUsuario">
+          </label>
+                    <span class="input__icon"><i class="bx bx-user"></i></span>
+                    <small class="input__error_message"></small>
+                </div>
+                <div class="input__group">
+                    <label class="field">
+            <input type="Contraseña" name="Contraseña" placeholder="Contraseña" id="loginContraseña">
+          </label>
+                    <span class="input__icon"><i class="bx bx-lock"></i></span>
+                    <span class="showHide__Icon"><i class="bx bx-hide"></i></span>
+                    <small class="input__error_message"></small>
+                </div>
+                <div class="form__actions">
+                    <label for="checkboxInput" class="remeber_me">
+            <input type="checkbox" id="checkboxInput">
+            <span class="checkmark"></span>
+            <span>Recuérdame</span>
+          </label>
+                    <div class="forgot_Contraseña">¿Olvidó su contraseña?</div>
+                </div>
+                <!-- boton de iniciar -->
+                <button type="submit" class="submit-button" id="loginSubmitBtn">Ingresar</button>
+                <!-- alternativa de ingresar -->
+                <div class="alternate-login">
+                    <div class="link">
+                        <i class='bx bxl-google'></i>
+                        <span>Google</span>
+                    </div>
+                    <div class="link">
+                        <i class='bx bxl-facebook-circle'></i>
+                        <span>Facebook</span>
+                    </div>
+                </div>
+            </form>
+            <!-- FIN DE INICIAR SESION-->
+
+            <!-- CREAR CUENTA -->
+            <form class="sign-up__form" id="signUpForm">
+                <!-- titulos -->
+                <h1 class="form__title">RECYCLAPP</h1>
+
+                <div class="input__group">
+                    <label class="field">
+            <input type="text" name="Usuario" placeholder="Usuario" id="signUpUsuario">
+          </label>
+                    <span class="input__icon"><i class="bx bx-user"></i></span>
+                    <small class="input__error_message"></small>
+                </div>
+                <div class="input__group">
+                    <label class="field">
+            <input type="text" name="email" placeholder="Email@example.com" id="signUpEmail">
+          </label>
+                    <span class="input__icon"><i class="bx bx-at"></i></span>
+                    <small class="input__error_message"></small>
+                </div>
+                <div class="input__group">
+                    <label class="field">
+            <input type="Contraseña" name="Contraseña" placeholder="Contraseña" id="signUpContraseña">
+          </label>
+                    <span class="input__icon"><i class="bx bx-lock"></i></span>
+                    <span class="showHide__Icon"><i class="bx bx-hide"></i></span>
+                    <small class="input__error_message"></small>
+                </div>
+                <div class="input__group confirm__group">
+                    <label class="field">
+            <input type="Contraseña" name="confirma_Contraseña" placeholder="Confirma Contraseña" id="signUpConfirmaContraseña">
+          </label>
+                    <span class="input__icon"><i class="bx bx-lock"></i></span>
+                    <span class="showHide__Icon"><i class="bx bx-hide"></i></span>
+                    <small class="input__error_message"></small>
+                </div>
+                <!-- inicio boton -->
+                <button type="submit" class="submit-button" id="signUpSubmitBtn">Crear cuenta</button>
+                <!-- alternativas de ingresar -->
+                <div class="alternate-login">
+                    <div class="link">
+                        <i class='bx bxl-google'></i>
+                        <span>Google</span>
+                    </div>
+                    <div class="link">
+                        <i class='bx bxl-facebook-circle'></i>
+                        <span>Facebook</span>
+                    </div>
+                </div>
+            </form>
+            <!-- Fin de crear cuenta -->
+        </div>
+        <!-- fin del cuestinario -->
+
+        <!-- Inicio del cuadro derecho -->
+        <div class="aside__area" id="aside_Area">
+            <div class="login__aside-info">
+                <h4>Hola!</h4>
+                <img src="https://d.top4top.io/p_1945xjz2y1.png" alt="Image">
+                <p>Ingresa tus datos personales y comienza a reciclar con nosotros</p>
+                <button id="aside_signUp_Btn">Crear cuenta</button>
+            </div>
+            <div class="sign-up__aside-info">
+                <h4>Bienvenido</h4>
+                <img src="https://e.top4top.io/p_1945sidbp2.png" alt="Image">
+                <p>Para mantenerse conectado con nosotros, inicie sesión con su información personal</p>
+                <button id="aside_signIn_Btn">Iniciar sesión</button>
+            </div>
+        </div>
+    </div>
+    <!-- Fin del cuadro derecho-->
+    <script src="app.js"></script>
+</body>
+
+</html>
