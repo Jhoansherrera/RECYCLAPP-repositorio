@@ -1,5 +1,12 @@
 /* Main Css Reset */
 
+.conteiner .imagen {
+    width: 100px;
+    height: 140px;
+    margin: -10px 70px;
+    position: absolute;
+}
+
 :root {
     --white-color: rgb(255, 255, 255);
     /*color del cuadro de atras*/
@@ -488,7 +495,9 @@ form.sign-up__form {
 }
 
 .aside__area>div img {
-    width: 100%;
+    width: 70%;
+    /*primera imagen*/
+    margin: 40px;
     pointer-events: none;
 }
 
