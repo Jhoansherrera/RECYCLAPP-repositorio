@@ -1,3 +1,180 @@
+/*menu*/
+
+
+/* CORE STYLES */
+
+:root {
+    --primary-color: #732a2a00;
+    --overlay-color: #3f732ab6;
+    --menu-speed: 0.75s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* MENU STYLES */
+
+.menu-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.menu-wrap .toggler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+}
+
+.menu-wrap .hamburger {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Hamburger Line */
+
+.menu-wrap .hamburger>div {
+    position: relative;
+    flex: none;
+    width: 100%;
+    height: 2px;
+    background: #3f732a;
+    /*rayas del menu*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+
+/* Hamburger Lines - Top & Bottom */
+
+.menu-wrap .hamburger>div::before,
+.menu-wrap .hamburger>div::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+    width: 100%;
+    height: 2px;
+    background: inherit;
+}
+
+
+/* Moves Line Down */
+
+.menu-wrap .hamburger>div::after {
+    top: 10px;
+}
+
+
+/* Toggler Animation */
+
+.menu-wrap .toggler:checked+.hamburger>div {
+    transform: rotate(135deg);
+}
+
+
+/* Turns Lines Into X */
+
+.menu-wrap .toggler:checked+.hamburger>div:before,
+.menu-wrap .toggler:checked+.hamburger>div:after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+
+/* Rotate On Hover When Checked */
+
+.menu-wrap .toggler:checked:hover+.hamburger>div {
+    transform: rotate(225deg);
+}
+
+
+/* Show Menu */
+
+.menu-wrap .toggler:checked~.menu {
+    visibility: visible;
+}
+
+.menu-wrap .toggler:checked~.menu>div {
+    transform: scale(1);
+    transition-duration: var(--menu-speed);
+}
+
+.menu-wrap .toggler:checked~.menu>div>div {
+    opacity: 1;
+    transition: opacity 0.4s ease 0.4s;
+}
+
+.menu-wrap .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-wrap .menu>div {
+    background: var(--overlay-color);
+    border-radius: 50%;
+    width: 200vw;
+    height: 200vw;
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    transition: all 0.4s ease;
+}
+
+.menu-wrap .menu>div>div {
+    text-align: center;
+    max-width: 90vw;
+    max-height: 100vh;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu>div>div>ul>li {
+    list-style: none;
+    color: #fff;
+    /*letras del menu*/
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.menu-wrap .menu>div>div>ul>li>a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.4s ease;
+}
+
+
 /* Main Css Reset */
 
 .conteiner .imagen {
@@ -8,21 +185,28 @@
 }
 
 :root {
-    --white-color: rgb(255, 255, 255);
+    --white-color: rgba(255, 255, 255, 0.726);
+    --white-color1: rgb(255, 255, 255);
     /*color del cuadro de atras*/
     --balck-color: rgb(0, 0, 0);
     /*color de letras de los botones*/
-    --body-BG-color: #3f732a98;
+    background-image: url(../img/ovejas1.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    /*--body-BG-color: url(../img/ovejas.jpg);*/
     /*fondo*/
-    --wrapper-shadow-color: rgba(255, 255, 255, 0.439);
-    --aside-area-BG-color: #3f732a;
+    --wrapper-shadow-color: rgb(255, 255, 255);
+    --aside-area-BG-color: hsla(103, 46%, 31%, 0.63);
     /*color del cuadro derecha*/
     --aside-area-width: 330px;
     --error-color: rgb(231, 76, 60);
-    --success-color: #3f732a;
-    --primary-light-gray: rgb(184, 180, 180);
+    --success-color: #732a2a;
+    --primary-light-gray: rgb(165, 161, 161);
     --primary-color: #3f732a;
-    --light-blue-color: rgb(141, 246, 164);
+    --light-blue-color: #3f732a;
     --input-border-color: rgb(152, 169, 192);
     --paragraph-color: rgb(231, 231, 231);
 }
@@ -368,7 +552,7 @@ button.submit-button {
     position: relative;
     width: 65%;
     background-color: var(--primary-color);
-    color: var(--white-color);
+    color: var(--white-color1);
     cursor: pointer;
     padding: 16px 0;
     border: none;
@@ -486,7 +670,7 @@ form.sign-up__form {
 }
 
 .aside__area>div h4 {
-    color: var(--white-color);
+    color: var(--white-color1);
     letter-spacing: 5px;
     font-weight: 500;
     font-size: 35px;
@@ -495,9 +679,9 @@ form.sign-up__form {
 }
 
 .aside__area>div img {
-    width: 70%;
+    width: 100%;
     /*primera imagen*/
-    margin: 40px;
+    margin: 50px 2px -15px;
     pointer-events: none;
 }
 
@@ -514,8 +698,8 @@ form.sign-up__form {
     background-color: transparent;
     width: 60%;
     margin: auto;
-    border: 2px solid var(--white-color);
-    color: var(--white-color);
+    border: 2px solid var(--white-color1);
+    color: var(--white-color1);
     cursor: pointer;
     padding: 14px 0;
     border-radius: 2px;
@@ -526,8 +710,8 @@ form.sign-up__form {
 }
 
 .aside__area>div button:hover {
-    border-color: var(--white-color);
-    background-color: var(--white-color);
+    border-color: var(--white-color1);
+    background-color: var(--white-color1);
     color: vAR(--balck-color);
 }
 
